@@ -1,18 +1,29 @@
 from flask import Flask, request, send_from_directory, render_template
+from send_sms import sendsms
 app = Flask(__name__, static_folder="/app/static")#, template_folder="/app/templates")
 
 @app.route('/')
 def main():
-    return ("You are a bitch")
+        """Respond to incoming calls with a simple text message."""
+	if request.method != 'POST':
+		sendsms()
+
+	number = request.form['From']
+	message_body = request.form['Body']
+	resp = MessagingResponse().message("{}, Thanks for telling me about your day! You said: {}".format(number, message_body))
+	return str(resp)
     
-@app.route('/')
+@app.route("/index")
 def getcss():
-    return send_from_directory("/app/static/css", cssFile.css)
+    sendsms()		
+    return send_from_directory("app/static/css", cssFile.css)
 
-@app.route('/textthisbitch', methods=['POST'])
-def twilapi():
-
+@app.route('/')
+def gethtml():
+	return send_from_directory("app/static/html", index.html)
 
 app.run(debug=True, port = 5000)
 
 
+		
+	 
