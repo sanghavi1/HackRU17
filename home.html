@@ -30,10 +30,11 @@
 			    }
 			    entry.append('<div id="content"><div id="date"><div id="day"><div id="dayofweek">' + data.dayofweek +'</div><div id="dates">' + data.date +'</div></div></div><div id="text">' + data.text +'</div></div>');
 			})
-			data.append('</div>');
-		    }
 		}
-            }          
+            }  
+		data.append('</div>');
+		    }
+        
                 
             $(document).ready(function(){
                 getData();
