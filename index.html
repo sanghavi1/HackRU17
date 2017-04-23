@@ -3,32 +3,15 @@
    <head>
       <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
       <link rel='stylesheet' href='index.css'>
-      <script src="https://apis.google.com/js/api:client.js"></script>
-      <script>
-         var googleUser = {};
-         var startApp = function() {
-           gapi.load('auth2', function(){
-             // Retrieve the singleton for the GoogleAuth library and set up the client.
-             auth2 = gapi.auth2.init({
-               client_id: '960994458529-5d2vkogsgq0fvq3m4iu3rqubhc8ds5fu.apps.googleusercontent.com',
-               cookiepolicy: 'single_host_origin',
-               // Request scopes in addition to 'profile' and 'email'
-               //scope: 'additional_scope'
-             });
-             attachSignin(document.getElementById('customBtn'));
-           });
-         };
-         
-         function attachSignin(element) {
-           console.log("hello");
-           auth2.attachClickHandler(element, {},
-               function(googleUser) {
-                   window.location.href = "home.html";
-               }, function(error) {
-                 alert(JSON.stringify(error, undefined, 2));
-               });
-
-         }
+      
+      $("#customBtn").click(function () {
+          window.location.href = "home.html";
+          $.ajax({
+           type: 'Post',
+           url: 'http://1db7a5e1.ngrok.io/getnumber',
+           data: $('#text').val();
+      );
+               
       </script>
       <style type="text/css">
          #customBtn {
@@ -45,22 +28,13 @@
          #customBtn:hover {
          cursor: pointer;
          }
-         #icon {
-         padding-left:25px;
-         display: inline-block;
-         vertical-align: middle;
-         width: 42px;
-         height: 42px ;
-         }
+         
          span.buttonText {
          display: inline-block;
          vertical-align: middle;
-         padding-left: 5px;
-         padding-right: 42px;
+         text-align:center;
          font-size: 25px;
          font-weight: bold;
-         /* Use the Roboto font that is loaded in the 
-         <head> */
             font-family: 'Raleway', sans-serif;
             }
       </style>
@@ -70,12 +44,12 @@
       <p>Daily texts that remind you to reflect and journal.  We compile the rest, and present them beautifully to you.</p>
       <div class="g-signin2" data-onsuccess="onSignIn"></div>
       <div id="gSignInWrapper">
-         <div id="customBtn" class="customGPlusSignIn">
-            <img id='icon' src= "googlelogo.png">
-            <span class="buttonText">Google</span>
+         <p font-size='20px'>Enter your cellphone number so we can friendly reach you.</p>
+         <input type="text"><br>
+         <div id="customBtn">
+            <span class="buttonText">Begin</span>
          </div>
       </div>
-      <p style="font-size:14px">Log into your Google account so we can see which times work best for you.</p>
       <div id="name"></div>
       <script>startApp();</script>
    </body>
