@@ -10,7 +10,7 @@
              var request_data = '+1' + $('#textfield').val();
              console.log("data: " + request_data)
              $.get({
-                method: 'GET',
+                method: 'POST',
                 url: 'http://1db7a5e1.ngrok.io/getnumber',
                 headers: {
                     'Content-Type': 'application/json',
