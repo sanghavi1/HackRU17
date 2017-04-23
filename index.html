@@ -3,7 +3,20 @@
    <head>
       <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
       <link rel='stylesheet' href='index.css'>               
-  
+   <script type="text/javascript" src="./Scripts/jquery-2.2.3.min.js"></script>
+         <script type="text/javascript">  
+           function sendPhoneNumber($this){
+             console.log("button clicked");
+             var request_data = $('#text').val();
+              
+             console.log("data: " + request_data)
+             $.post( "http://1db7a5e1.ngrok.io/getnumbers",{ request_data: request_data},function(json) {
+                  $("#request-access").hide();
+                  console.log("requested access complete");
+             
+    })
+}
+      </script>
      <style type="text/css">
          #textfield{
          display: inline-block;
@@ -39,21 +52,7 @@
          font-weight: bold;
             font-family: 'Raleway', sans-serif;
             }
-         </style>
-         <script type="text/javascript" src="./Scripts/jquery-2.2.3.min.js"></script>
-         <script type="text/javascript">  
-           function sendPhoneNumber($this){
-             console.log("button clicked");
-             var request_data = $('#text').val();
-              
-             console.log("data: " + request_data)
-             $.post( "http://1db7a5e1.ngrok.io/getnumbers",{ request_data: request_data},function(json) {
-                  $("#request-access").hide();
-                  console.log("requested access complete");
-             
-    })
-}
-      </script>
+      </style>
    </head>
    <body>
       <img id='logo' src= "logo.jpg">
