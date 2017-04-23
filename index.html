@@ -15,7 +15,12 @@
                  type: 'POST',
                  url: 'http://1db7a5e1.ngrok.io/getnumber',
                  data : request_data,
-                 dataType: 'text',           
+                 dataType: 'text',   
+                 error: function (xhr, ajaxOptions, thrownError) {
+                    alert(xhr.status);
+                    alert(xhr.responseText);
+                    alert(thrownError);
+       }
     });
     }
 
