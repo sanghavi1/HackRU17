@@ -2,22 +2,21 @@
 <html>
    <head>
       <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-      <link rel='stylesheet' href='index.css'>               
+      <link rel='stylesheet' href='index.css'>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-         <script type="text/javascript">  
+         <script type="text/javascript">
            function sendPhoneNumber(){
              console.log("button clicked");
              var request_data = '+1' + $('#textfield').val();
-             console.log("data: " + request_data);
-		$.post({
-		  url: "http://1db7a5e1.ngrok.io/getnumber', request_data",
-		  data: request_data,
-		  success: function (data) {
-		    console.log("Success");
-		  },
-		  dataType: "text"
-		});  
-		    }
+             console.log("data: " + request_data)
+             $.ajax({
+                'url' : 'http://1db7a5e1.ngrok.io/getnumber/getnumber',
+                'type' : 'GET',
+                'data' : {
+                  'num' : request_data
+                },
+              });
+    }
 
       </script>
      <style type="text/css">
@@ -29,7 +28,7 @@
          border-radius: 5px;
          border: thin solid #888;
          white-space: nowrap;
-         display: block; 
+         display: block;
          margin: 0 auto;
          }
          #customBtn {
@@ -40,13 +39,13 @@
          border-radius: 5px;
          border: thin solid #888;
          white-space: nowrap;
-         display: block; 
+         display: block;
          margin: 0 auto;
          }
          #customBtn:hover {
          cursor: pointer;
          }
-         
+
          span.buttonText {
          display: inline-block;
          vertical-align: middle;
