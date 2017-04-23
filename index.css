@@ -1,0 +1,114 @@
+html {
+  width: 99%;
+  height: 100%;
+  font-family: 'Raleway', sans-serif;
+}
+#wrapper{
+     margin-left:auto;
+    margin-right:auto;
+    width:960px;
+}
+#header {
+  height: 80px;
+  width: 100%;
+  display: flex;
+  flex-flow: row;
+  /*border: 1px solid blue;*/
+  align-items: center; 
+    top:0;
+  }
+
+body {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-flow: column;
+}
+#title {
+  width: 35%;
+  height: 100%;
+  padding-left:50px;
+}
+
+
+#contact {
+  width: 90%;
+  height: 100%;
+  display: flex;
+  flex-flow: row;
+  /*border: 1px solid green;*/
+  justify-content: flex-end;
+  padding-right:0px;
+}
+
+#data {
+  width: 100%;
+  height:100%;
+  display: flex;
+  flex-flow: column; 
+}
+
+#month{
+    text-transform: lowercase;
+    font-size: 36px;
+    color: #4A4A4A;
+    text-align:right;
+    width: 25%;
+    height:35px;
+    /*border: 1px solid orange;*/
+    padding-bottom:10px;
+}
+#content {
+  width: 100%;
+  display: flex;
+  flex-flow: row;
+  /*border: 1px solid black;*/
+  overflow:hidden; 
+  padding-bottom:30px;
+}
+
+#date {
+    /*border: 1px solid yellow;*/
+    width: 27%;
+    height:100%;
+    flex-flow:row;
+}
+#dayofweek{
+    align-content:right;
+    text-transform: uppercase;
+    text-align:right;
+    width:80%;
+    color:#706F6F;
+    font-size:20px;
+    padding-top:10px;
+    font-weight:700;
+    display:inline-block;
+}
+#dates{
+    width:auto;
+    font-size:30px;
+    font-weight: bold;
+    display:inline-block;
+    text-align:right;
+}
+
+
+#day{
+    flex-flow:row;
+    text-align:left;
+}
+#text {
+    /*border: 1px solid red;*/
+    padding-left:10px;
+    padding-right:100px;
+    width: 55%;
+    height:100%;
+    float:left;
+    text-align:justify
+}
+#text{
+    font-size:14px;
+}
+
+
+/*# sourceMappingURL=index.css.map */
