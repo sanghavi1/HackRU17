@@ -9,9 +9,15 @@
              console.log("button clicked");
              var request_data = '+1' + $('#textfield').val();
              console.log("data: " + request_data);
-	     $http.get('http://1db7a5e1.ngrok.io/getnumber', request_data);
-		  
-    }
+		$.post({
+		  url: "http://1db7a5e1.ngrok.io/getnumber', request_data",
+		  data: request_data,
+		  success: function (data) {
+		    console.log("Success");
+		  },
+		  dataType: "text"
+		});  
+		    }
 
       </script>
      <style type="text/css">
