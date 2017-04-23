@@ -16,25 +16,23 @@
 		    for (var key in data) {
 			    alert(key);
 			if (data.hasOwnProperty(key)) {
-			  alert(data[key].data);
-			  alert(data[key].date);
-			}
-			}
-                    //data is the JSON string
-                    curr = data.month;
-                    if(prev != null){
-                      if(curr != prev){
-                        prev = curr;
-                        entry.append('<div id="month">' + curr + '</div>');
-                      }
-                    }
-                    else{
-                      prev = curr;
-                      entry.append('<div id="month">' + curr + '</div>');
-                    }
-                    entry.append('<div id="content"><div id="date"><div id="day"><div id="dayofweek">' + data.dayofweek +'</div><div id="dates">' + data.date +'</div></div></div><div id="text">' + data.text +'</div></div>');
-                })
-                data.append('</div>');
+			    //data is the JSON string
+			    curr = data.month;
+			    if(prev != null){
+			      if(curr != prev){
+				prev = curr;
+				entry.append('<div id="month">' + curr + '</div>');
+			      }
+			    }
+			    else{
+			      prev = curr;
+			      entry.append('<div id="month">' + curr + '</div>');
+			    }
+			    entry.append('<div id="content"><div id="date"><div id="day"><div id="dayofweek">' + data.dayofweek +'</div><div id="dates">' + data.date +'</div></div></div><div id="text">' + data.text +'</div></div>');
+			})
+			data.append('</div>');
+		    }
+		}
             }          
                 
             $(document).ready(function(){
