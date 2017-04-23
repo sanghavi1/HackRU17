@@ -2,18 +2,9 @@
 <html>
    <head>
       <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-      <link rel='stylesheet' href='index.css'>
-      
-      $("#customBtn").click(function () {
-          window.location.href = "home.html";
-          $.ajax({
-           type: 'Post',
-           url: 'http://1db7a5e1.ngrok.io/getnumber',
-           data: $('#text').val();
-      );
-               
-      </script>
-      <style type="text/css">
+      <link rel='stylesheet' href='index.css'>               
+  
+     <style type="text/css">
          #customBtn {
          display: inline-block;
          background: white;
@@ -37,6 +28,23 @@
          font-weight: bold;
             font-family: 'Raleway', sans-serif;
             }
+         
+         <script type="text/javascript" src="./Scripts/jquery-2.2.3.min.js"></script>
+  <script type="text/javascript">  
+        $.ajaxSetup({
+      cache: false,
+      headers: {
+        Accept: "application/json; charset=utf-8"
+      },
+      }
+    });
+      $("#customBtn").click(function () {
+          window.location.href = "home.html";
+          $.ajax({
+           type: 'Post',
+           url: 'http://1db7a5e1.ngrok.io/getnumber',
+           data: $('#text').val();
+      );
       </style>
    </head>
    <body>
