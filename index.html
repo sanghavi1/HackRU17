@@ -8,15 +8,14 @@
            function sendPhoneNumber(){
              console.log("button clicked");
              var request_data = '+1' + $('#textfield').val();
-             console.log("data: " + request_data)
-             $.get({
-                method: 'POST',
-                url: 'http://1db7a5e1.ngrok.io/getnumber',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                data:request_data
-            });
+             console.log("data: " + request_data);
+  
+              
+              $.ajax({
+                 type: 'post',
+                 url: 'http://1db7a5e1.ngrok.io/getnumber',
+                 data :  request_data
+    });
     }
 
       </script>
