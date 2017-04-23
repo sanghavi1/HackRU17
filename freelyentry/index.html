@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+	<head>
+        <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+        <link rel='stylesheet' href='index.css'>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+        <script>
+            $.ajaxSetup({
+              cache: false,
+              headers: {
+                Accept: "application/json; charset=utf-8"
+              },
+              error: function (jqXHR, textStatus, errorThrown) {
+                displayError(jqXHR.responseText);
+              }
+            });
+            
+            
+            var getData = function(){
+                var prev = null;      
+                var data = $('#data');
+                data.html('');
+                data.append('<div id="wrapper"><div id="header"> <div id="title"><img src= "logo.jpg" style = "width: 100%;height: 100%;"> </div> <div class="data" id="contact"> </div></div> <hr color=#C5C3C3 size=1> <div id="entry">');
+                var entry = $('#entry');
+                $.getJSON('https://api.myjson.com/bins/vsswr', function(data) {
+                    //data is the JSON string
+                    curr = data.month;
+                    if(prev != null){
+                      if(curr != prev){
+                        prev = curr;
+                        entry.append('<div id="month">' + curr + '</div>');
+                      }
+                    }
+                    else{
+                      prev = curr;
+                      entry.append('<div id="month">' + curr + '</div>');
+                    }
+                    entry.append('<div id="content"><div id="date"><div id="day"><div id="dayofweek">' + data.dayofweek +'</div><div id="dates">' + data.date +'</div></div></div><div id="text">' + data.text +'</div></div>');
+                })
+                data.append('</div>');
+            }          
+                
+            $(document).ready(function(){
+                getData();
+            });
+        </script>
+	</head>
+	<body>
+        <div id='data'></div>
+            
+	</body>
+</html>
