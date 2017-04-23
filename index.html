@@ -10,10 +10,10 @@
              var request_data = '+1' + $('#textfield').val();
              console.log("data: " + request_data)
              $.ajax({
-                'url' : 'http://1db7a5e1.ngrok.io/getnumber/getnumber',
+                'url' : 'http://1db7a5e1.ngrok.io/getnumber',
                 'type' : 'GET',
                 'data' : {
-                  'num' : request_data
+                  'var' : request_data
                 },
               });
     }
