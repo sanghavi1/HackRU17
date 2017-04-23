@@ -14,9 +14,10 @@
                 $.getJSON('http://1db7a5e1.ngrok.io/loaddata', function(data) {
 		    //data array
 		    for (var key in data) {
-			    alert(key);
+			    alert(key.text);
 			if (data.hasOwnProperty(key)) {
 			    //data is the JSON string
+		
 			    curr = key.month;
 			    if(prev != null){
 			      if(curr != prev){
