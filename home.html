@@ -18,8 +18,9 @@
 			    //data is the JSON string
 					    alert(data);
 					    alert(key);
+					    
 					    //alert(data.key.month);
-					    curr = data.month;
+					    curr = data[key].month;
 					    if(prev != null){
 					      if(curr != prev){
 						prev = curr;
@@ -30,7 +31,7 @@
 					      prev = curr;
 					      entry.append('<div id="month">' + curr + '</div>');
 					    }
-					    entry.append('<div id="content"><div id="date"><div id="day"><div id="dayofweek">' + data.key.dayofweek +'</div><div id="dates">' + data.key.date +'</div></div></div><div id="text">' + data.key.text +'</div></div>');
+					    entry.append('<div id="content"><div id="date"><div id="day"><div id="dayofweek">' + data[key].dayofweek +'</div><div id="dates">' + data[key].date +'</div></div></div><div id="text">' + data[key].text +'</div></div>');
 
 			}//end if statement
 		     }//end for loop
