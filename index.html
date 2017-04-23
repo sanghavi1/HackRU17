@@ -14,14 +14,14 @@
                  type: 'Get',
                  url: './api/File',
                  beforeSend: function (jqXHR, settings) {
-                   list.html(wait);
+                   $(body).html(wait);
                  },
-                 
+                 success: {
                 'url' : 'http://1db7a5e1.ngrok.io/getnumber',
                 'type' : 'GET',
                 'data' : {
                   'var' : request_data
-                
+                },
                 },
               });
               window.location.href = "home.html";
