@@ -14,6 +14,7 @@
                 $.getJSON('http://1db7a5e1.ngrok.io/loaddata', function(data) {
 		    //data array
 		    for (var key in data) {
+			    alert(key);
 			if (data.hasOwnProperty(key)) {
 			  alert(data[key].data);
 			  alert(data[key].date);
