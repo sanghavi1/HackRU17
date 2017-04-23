@@ -23,8 +23,7 @@
            console.log("hello");
            auth2.attachClickHandler(element, {},
                function(googleUser) {
-            
-                 document.getElementById('name').load("home.html");
+                   window.location.href = "home.html";
                }, function(error) {
                  alert(JSON.stringify(error, undefined, 2));
                });
