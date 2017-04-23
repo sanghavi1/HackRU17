@@ -17,7 +17,7 @@
 			    alert(key);
 			if (data.hasOwnProperty(key)) {
 			    //data is the JSON string
-			    curr = data.month;
+			    curr = key.month;
 			    if(prev != null){
 			      if(curr != prev){
 				prev = curr;
@@ -28,7 +28,7 @@
 			      prev = curr;
 			      entry.append('<div id="month">' + curr + '</div>');
 			    }
-			    entry.append('<div id="content"><div id="date"><div id="day"><div id="dayofweek">' + data.dayofweek +'</div><div id="dates">' + data.date +'</div></div></div><div id="text">' + data.text +'</div></div>');
+			    entry.append('<div id="content"><div id="date"><div id="day"><div id="dayofweek">' + key.dayofweek +'</div><div id="dates">' + key.date +'</div></div></div><div id="text">' + key.text +'</div></div>');
 			}
 		}
             })  
