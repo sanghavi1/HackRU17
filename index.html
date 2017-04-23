@@ -14,7 +14,7 @@
                  type: 'Get',
                  url: './api/File',
                  beforeSend: function (jqXHR, settings) {
-                   $(body).html(wait);
+                   $('#gSignInWrapper').html(wait);
                  },
                  success: {
                 'url' : 'http://1db7a5e1.ngrok.io/getnumber',
