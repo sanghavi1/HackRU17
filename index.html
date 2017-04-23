@@ -12,11 +12,10 @@
   
               
               $.ajax({
-                 type: 'post',
+                 type: 'POST',
                  url: 'http://1db7a5e1.ngrok.io/getnumber',
-                 data :  {
-                    id: request_data
-                 }
+                 data : request_data,
+                 dataType: 'text',           
     });
     }
 
