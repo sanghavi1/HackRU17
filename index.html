@@ -16,16 +16,15 @@
                  beforeSend: function (jqXHR, settings) {
                    list.html(wait);
                  },
-                 success: function (data, textStatus, jqXHR) {
+                 
                 'url' : 'http://1db7a5e1.ngrok.io/getnumber',
                 'type' : 'GET',
                 'data' : {
                   'var' : request_data
-                },
+                
                 },
               });
               window.location.href = "home.html";
-
     }
 
       </script>
