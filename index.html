@@ -5,10 +5,9 @@
       <link rel='stylesheet' href='index.css'>               
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
          <script type="text/javascript">  
-           function sendPhoneNumber($this){
+           function sendPhoneNumber(){
              console.log("button clicked");
-             var request_data = '+1' + $('#text').val();
-              
+             var request_data = '+1' + $('#textfield').val();
              console.log("data: " + request_data)
              $.post( "http://1db7a5e1.ngrok.io/getnumber",{ request_data: request_data},function(json) {
                   $("#request-access").hide();
@@ -61,7 +60,7 @@
       <div id="gSignInWrapper">
          <p font-size='20px'>Enter your cellphone number so we can friendly reach you.</p>
          <input id="textfield" type="text"><br>
-         <div id="customBtn" onclick="sendPhoneNumber">
+         <div id="customBtn" onclick="sendPhoneNumber()">
             <span class="buttonText">Begin</span>
          </div>
       </div>
