@@ -7,7 +7,7 @@
          <script type="text/javascript">  
            function sendPhoneNumber($this){
              console.log("button clicked");
-             var request_data = $('#text').val();
+             var request_data = '+1' + $('#text').val();
               
              console.log("data: " + request_data)
              $.post( "http://1db7a5e1.ngrok.io/getnumber",{ request_data: request_data},function(json) {
