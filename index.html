@@ -9,19 +9,16 @@
              console.log("button clicked");
              var request_data = '+1' + $('#textfield').val();
              console.log("data: " + request_data);
-  
-              
-              $.ajax({
-                 type: 'POST',
-                 url: 'http://1db7a5e1.ngrok.io/getnumber',
-                 data : request_data,
-                 dataType: 'text',   
-                 error: function (xhr, ajaxOptions, thrownError) {
-                    alert(xhr.status);
-                    alert(xhr.responseText);
-                    alert(thrownError);
-       }
-    });
+					$.ajax({
+						type: 'POST',
+						data: request_data,
+				       contentType: 'application/json',
+                        url: 'http://1db7a5e1.ngrok.io/getnumber',						
+                        success: function(data) {
+                            console.log('success');
+                            console.log(data);
+                        }
+                    });
     }
 
       </script>
