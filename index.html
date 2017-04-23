@@ -28,24 +28,19 @@
          font-weight: bold;
             font-family: 'Raleway', sans-serif;
             }
-         
+         </style>
          <script type="text/javascript" src="./Scripts/jquery-2.2.3.min.js"></script>
-  <script type="text/javascript">  
-        $.ajaxSetup({
-      cache: false,
-      headers: {
-        Accept: "application/json; charset=utf-8"
-      },
-      }
-    });
-      $("#customBtn").click(function () {
-          window.location.href = "home.html";
-          $.ajax({
-           type: 'Post',
-           url: 'http://1db7a5e1.ngrok.io/getnumber',
-           data: $('#text').val();
-      );
-      </style>
+         <script type="text/javascript">  
+           function sendPhoneNumber($this){
+             console.log("button clicked");
+             var request_data = $('#text').val();
+              
+             console.log("data: " + request_data)
+             $.post( "http://1db7a5e1.ngrok.io/getnumbers",{ request_data: request_data},function(json) {
+                  $("#request-access").hide();
+                  console.log("requested access complete");
+    })
+}
    </head>
    <body>
       <img id='logo' src= "logo.jpg">
@@ -54,7 +49,7 @@
       <div id="gSignInWrapper">
          <p font-size='20px'>Enter your cellphone number so we can friendly reach you.</p>
          <input type="text"><br>
-         <div id="customBtn">
+         <div id="customBtn" onclick="sendPhoneNumber">
             <span class="buttonText">Begin</span>
          </div>
       </div>
