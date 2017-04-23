@@ -14,10 +14,9 @@
                 $.getJSON('http://1db7a5e1.ngrok.io/loaddata', function(data) {
 		    //data array
 		    for (var key in data) {
-			    alert(key.text);
 			if (data.hasOwnProperty(key)) {
 			    //data is the JSON string
-		
+			    if(var info in key){
 			    curr = key.month;
 			    if(prev != null){
 			      if(curr != prev){
@@ -30,6 +29,7 @@
 			      entry.append('<div id="month">' + curr + '</div>');
 			    }
 			    entry.append('<div id="content"><div id="date"><div id="day"><div id="dayofweek">' + key.dayofweek +'</div><div id="dates">' + key.date +'</div></div></div><div id="text">' + key.text +'</div></div>');
+			}
 			}
 		}
             })  
