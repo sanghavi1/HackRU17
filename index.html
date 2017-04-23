@@ -9,19 +9,11 @@
              console.log("button clicked");
              var request_data = '+1' + $('#textfield').val();
              console.log("data: " + request_data)
-              var wait = 'Loading...';
                $.ajax({
-                 type: 'Get',
-                 url: './api/File',
-                 beforeSend: function (jqXHR, settings) {
-                   $('#gSignInWrapper').html(wait);
-                 },
-                 success: {
                 'url' : 'http://1db7a5e1.ngrok.io/getnumber',
                 'type' : 'GET',
                 'data' : {
                   'var' : request_data
-                },
                 },
               });
               window.location.href = "home.html";
