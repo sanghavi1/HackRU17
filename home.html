@@ -16,19 +16,22 @@
 		    for (var key in data) {
 			if (data.hasOwnProperty(key)) {
 			    //data is the JSON string
-			    var info = key[0];
-			    curr = info.month;
-			    if(prev != null){
-			      if(curr != prev){
-				prev = curr;
-				entry.append('<div id="month">' + curr + '</div>');
-			      }
-			    }
-			    else{
-			      prev = curr;
-			      entry.append('<div id="month">' + curr + '</div>');
-			    }
-			    entry.append('<div id="content"><div id="date"><div id="day"><div id="dayofweek">' + info.dayofweek +'</div><div id="dates">' + info.date +'</div></div></div><div id="text">' + info.text +'</div></div>');
+			    for (var info in key){
+				    if (key.hasOwnProperty(info){
+					    curr = info.month;
+					    if(prev != null){
+					      if(curr != prev){
+						prev = curr;
+						entry.append('<div id="month">' + curr + '</div>');
+					      }
+					    }
+					    else{
+					      prev = curr;
+					      entry.append('<div id="month">' + curr + '</div>');
+					    }
+					    entry.append('<div id="content"><div id="date"><div id="day"><div id="dayofweek">' + info.dayofweek +'</div><div id="dates">' + info.date +'</div></div></div><div id="text">' + info.text +'</div></div>');
+			   	 }//end if statement	
+			    }//end for loop
 			}//end if statement
 		     }//end for loop
             })  
