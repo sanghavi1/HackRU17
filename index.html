@@ -10,11 +10,21 @@
              var request_data = '+1' + $('#textfield').val();
              console.log("data: " + request_data)
                $.ajax({
-                'url' : 'http://1db7a5e1.ngrok.io/getnumber',
+             var wait = 'Loading...';
+                $.ajax({
+                  type: 'Get',
+                  url: './api/File',
+                  beforeSend: function (jqXHR, settings) {
+                    list.html(wait);
+                  },
+                  success: {
+                  
+              'url' : 'http://1db7a5e1.ngrok.io/getnumber',
                 'type' : 'GET',
                 'data' : {
                   'var' : request_data
                 },
+                      },
               });
               window.location.href = "home.html";
     }
@@ -65,7 +75,7 @@
       </style>
    </head>
    <body>
-      <img id='logo' src= "logo.jpg">
+      <img id='logo' src= "logo.png">
       <p>Daily texts that remind you to reflect and journal.  We compile the rest, and present them beautifully to you.</p>
       <div class="g-signin2" data-onsuccess="onSignIn"></div>
       <div id="gSignInWrapper">
