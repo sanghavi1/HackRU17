@@ -175,6 +175,8 @@ app.get('/', function(request, response){
 
 app.get('/getnumber', function(request, response){
 	console.log(request.query.var);
+	// phone num is stored in request.query.var.
+	// https://www.youtube.com/watch?v=79DijItQXMM
 });
 
 app.get('/login', function(request, response){
