@@ -9,9 +9,14 @@
              console.log("button clicked");
              var request_data = '+1' + $('#textfield').val();
              console.log("data: " + request_data)
-             $.post( "http://1db7a5e1.ngrok.io/getnumber",{ request_data: request_data},function(json) {
-                  $("#request-access").hide();
-                  console.log("requested access complete");
+             $.get({
+                method: 'GET',
+                url: 'http://1db7a5e1.ngrok.io/getnumber',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                data:request_data
+            });
              
     })
 }
