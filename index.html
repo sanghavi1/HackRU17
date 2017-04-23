@@ -9,13 +9,13 @@
              console.log("button clicked");
              var request_data = '+1' + $('#textfield').val();
              console.log("data: " + request_data)
-               $.ajax({
-             var wait = 'Loading...';
                 $.ajax({
                   type: 'Get',
                   url: './api/File',
                   beforeSend: function (jqXHR, settings) {
-                    list.html(wait);
+                       setTimeout(function () {
+                          r.resolve();
+                        }, 500);
                   },
                   success: {
                   
